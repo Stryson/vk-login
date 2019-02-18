@@ -1,0 +1,100 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+// ≥992px
++media-breakpoint-down(md)
+  header
+    .grid
+      grid-template-columns: auto auto
+      .search
+        justify-content: start
+        padding-left: 20px
+  .main
+    padding: 92px 0 40px 0
+    .grid
+      grid-template-columns: auto
+      .content
+        display: none
+      .forms
+        form
+          .registration
+            .nice-select
+              .list
+                max-height: 160px
+                .option
+                  width: auto
+  footer
+    .grid
+      grid-template-columns: 1fr 2fr 1fr
+      padding-top: 20px
+      .languages
+        #russian
+          display: none
+        #ukrainian
+          display: none
+
+// ≥768px
++media-breakpoint-down(sm)
+  header
+    position: static
+  .main
+    padding: 40px 0 0 0
+    .grid
+      .forms
+        form
+          .registration
+            .title_form
+              text-align: left
+  footer
+    padding: 10px 0
+    .grid
+      grid-template-columns: 1fr
+      padding: 0
+      border: 0
+      & > div
+        display: flex
+        align-items: center
+        justify-content: center
+      a
+        color: #828282
+      span
+        display: none
+      .company
+        display: none
+
+// ≥576px
++media-breakpoint-down(xs)
+  header
+    .grid
+      .search
+        display: none
+      .language
+        display: none
+  .main
+    padding: 0
+    .grid
+      padding: 0
+      .forms
+        grid-gap: 0
+        form
+          box-shadow: none
+          .login
+            grid-template-columns: auto
+            .btn
+              max-width: 100%
+            .question
+              margin-top: 10px
+              margin-left: 0
+              justify-content: center
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)

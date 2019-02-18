@@ -1,0 +1,329 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+// ОБЩИЕ ПАРАМЕТРЫ
+body
+  background-color: #edeef0
+  font-size: 13px
+  font-family: $default-font
+
+h2
+  font-weight: 400
+  color: #000
+  &::placeholder
+    color: #6c757e
+
+.form-control
+  color: #000
+  &:hover,
+  &:active,
+  &:focus
+    outline: none
+    box-shadow: none
+  &:focus
+    color: #000
+    &::placeholder
+      opacity: 0.6
+
+.grid
+  display: grid
+
+.form_input
+  height: 35px
+  grid-column: 1 / -1
+  font-size: 14px
+  border: 1px solid #d3d9de
+  margin-bottom: 15px
+  border-radius: 3px
+  &:focus,
+  &:active
+    border-color: #c9d0d6
+
+.btn
+  font-size: 14px
+  height: 35px
+  border: 0
+  border-radius: 3px
+
+.form-group
+  margin: 0
+
+// ШАПКА
+header
+  background-color: #4a76a8
+  height: 42px
+  display: flex
+  align-items: center
+  position: fixed
+  width: 100%
+  z-index: 3
+  .grid
+    grid-template-columns: 540px auto
+    & > div
+      display: flex
+      align-items: center
+    .search
+      justify-content: center
+      .form-group
+        position: relative
+        .form-control
+          background-color: #224b7a
+          height: 30px
+          border: 1px solid transparent
+          border-radius: 15px
+          padding: 0 50px 0 30px
+          font-size: 13px
+          color: #d9e2ec
+          &::placeholder
+            color: #8fadc8
+          &:focus
+            background-color: #fff
+            color: #000
+            &::placeholder
+              color: #fff
+        .fa-search
+          position: absolute
+          color: #8fadc8
+          left: 10px
+          bottom: 0
+          top: 0
+          margin: auto
+          height: 15px
+    .language
+      justify-content: flex-end
+      padding-right: 10px
+      a
+        display: flex
+        align-items: center
+        height: 42px
+        text-decoration: none
+        color: #fff
+        padding: 0 10px
+        font-size: 12.5px
+        font-weight: 700
+        &:hover
+          background-color: #3d6898
+
+// ОСНОВНОЙ КОНТЕНТ
+.main
+  padding: 147px 0 95px 0
+  .grid
+    grid-template-columns: 2fr 1fr
+    .content
+      grid-template-columns: 180px 180px 180px
+      .headline
+        grid-column: 1 / -1
+        text-align: center
+        padding-bottom: 45px
+        h2
+          font-size: 22px
+        span
+          font-size: 14px
+          color: #222
+          margin: 0
+      .phone_android
+        position: relative
+        left: 3.5%
+      .phone_ios
+        z-index: 2
+        position: relative
+        top: -2%
+        left: -1%
+      .phone_wp
+        position: relative
+        left: -5%
+      .platforms
+        position: relative
+        display: flex
+        justify-content: center
+        padding-top: 5px
+        .platform
+          display: flex
+          align-items: center
+          text-decoration: none
+          padding: 5px 15px
+          border-radius: 4px
+          &:hover
+            background-color: #e1e5eb
+          .fab
+            color: #648fbf
+            font-size: 22px
+            padding-right: 10px
+          .text_span
+            font-size: 12.5px
+            color: #2a5885
+      .android
+        position: relative
+        left: 4%
+      .wp
+        position: relative
+        left: -4%
+      .products
+        grid-column: 1 / -1
+        text-align: center
+        padding-top: 20px
+        a
+          position: relative
+          color: #2a5885
+          .fa-angle-right
+            margin-left: 4px
+            opacity: 0.5
+            position: absolute
+            top: 4px
+          &:hover
+            .fa-angle-right
+              transform: translateX(2px)
+              transition: transform 150ms ease-in-out, -o-transform 150ms ease-in-out
+
+    .forms
+      grid-template-columns: auto
+      grid-gap: 30px
+      form
+        background-color: #fff
+        padding: 25px
+        box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8
+        .login
+          grid-template-columns: 100px auto
+          .btn
+            max-width: 100px
+            margin-top: 5px
+            background-color: #5181b8
+            &:hover,
+            &:active,
+            &:focus
+              outline: none
+              box-shadow: none
+            &:hover
+              background-color: #5b88bd
+          .question
+            display: flex
+            align-items: center
+            margin-left: 20px
+            a
+              color: #2a5885
+        .registration
+          grid-template-columns: 1fr 1fr 1fr
+          .title_form
+            text-align: center
+            grid-column: 1 / -1
+            padding-bottom: 20px
+            h2
+              font-size: 20px
+              margin-bottom: 3px
+            span
+              color: #656565
+              font-size: 12.5px
+              padding-bottom: 20px
+          .date
+            grid-column: 1 / -1
+            font-weight: 500
+            color: #939393
+            position: relative
+            margin-bottom: 10px
+            .fa-question-circle
+              margin-left: 10px
+              opacity: 0.6
+              cursor: pointer
+              position: absolute
+              top: 2px
+              font-size: 17px
+          #start
+            min-width: 75px
+          #middle
+            min-width: 100px
+          #end
+            min-width: 75px
+            margin-right: 0
+          .nice-select
+            grid-column: auto
+            height: 33px
+            line-height: 30px
+            padding: 0 0 0 12px
+            color: #6c757e
+            margin-right: 10px
+            transition: none
+            &:focus
+              border-radius: 3px 3px 0 0
+            &:hover
+              border: 1px solid #d3d9de
+            .list
+              color: #000
+              left: -1px
+              transition: none
+              border-radius: 0 0 2px 2px
+              overflow-y: scroll
+              max-height: 250px
+              box-shadow: 0 1px 3px rgba(0, 0, 0, .1)
+              border: 1px solid #c9d0d6
+              margin-top: 0
+              .selected
+                background-color: #e7edf2
+              #day
+                min-width: 56px
+              #month
+                min-width: 81px
+              #year
+                min-width: 56px
+              .option
+                padding-left: 12px
+                padding-right: 0
+                line-height: inherit
+                min-height: auto
+                font-weight: 400
+                &:hover
+                  background-color: #e7edf2
+          .btn
+            margin-top: 5px
+            background-color: #5181b8
+            grid-column: 1 / -1
+            font-weight: 500
+            &:hover,
+            &:active,
+            &:focus
+              outline: none
+              box-shadow: none
+          #next
+            background-color: #5fb053
+            &:hover
+              background-color: #68b35d
+          .facebook
+            position: relative
+            grid-column: 1 / -1
+            .btn
+              background-color: #4267b2
+              width: 100%
+              margin-top: 20px
+              font-size: 13px
+              font-weight: 400
+              padding-left: 20px
+            .fa-facebook
+              position: absolute
+              font-size: 18px
+              color: #fff
+              top: 50%
+              left: 4%
+
+// ПОДВАЛ
+footer
+  .grid
+    height: 82px
+    padding-top: 25px
+    grid-template-columns: auto auto auto
+    border-top: 1px solid #e4e8ed
+    a
+      color: #2a5885
+    span
+      color: #828282
+    .company
+      text-align: left
+    .help
+      text-align: center
+      a
+        padding: 0 5px
+    .languages
+      text-align: end
+      a
+        padding-left: 5px
+@import "media"
+// Always at the end
